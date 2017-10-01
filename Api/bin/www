@@ -3,8 +3,11 @@
 /**
  * Module dependencies.
  */
+var components = require('../app');
 
-var app = require('../app');
+var app = components.app;
+var ioServer = components.io;
+
 var debug = require('debug')('api:server');
 var http = require('http');
 
@@ -25,9 +28,9 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+ioServer.listen(port);
+ioServer.on('error', onError);
+ioServer.on('listening', onListening);
 
 /**
  * Normalize a port into a number, string, or false.
@@ -82,7 +85,7 @@ function onError(error) {
  */
 
 function onListening() {
-  var addr = server.address();
+  var addr = ioServer.address();
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
