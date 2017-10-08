@@ -18,7 +18,7 @@ var userSchema = new Schema({
         updatedAt: 'update_at'
     }
 });
-
+let User = mongoose.model('User', userSchema);
 module.exports = (registry) => {
     registry['User'] = User;
 }

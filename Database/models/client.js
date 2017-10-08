@@ -2,7 +2,7 @@ let mongoose = require('mongoose');
 
 let Schema = mongoose.Schema;
 
-let statusApplicationSchema = new Schema({
+let clientSchema = new Schema({
     first_name: { type: String },
     last_name: { type: String },
     email: { type: String },
@@ -15,7 +15,7 @@ let statusApplicationSchema = new Schema({
         updatedAt: 'update_at'
     }
 });
-let StatusApplicationApplication = mongoose.model('StatusApplication', statusApplicationSchema);
+let Client = mongoose.model('Client', clientSchema);
 module.exports = (registry) => {
-    registry['StatusApplication'] = StatusApplication;
+    registry['Client'] = Client;
 }

@@ -10,7 +10,7 @@ let applicationSchema = new Schema({
     statusClient: { type: String },
     nextStep: { type: String },
     sourceFoundId: { type: Schema.Types.ObjectId, ref: 'SourceFound' },
-    userId: { type: Schema.Types.ObjectId, ref: User },
+    userId: { type: Schema.Types.ObjectId, ref: 'User' },
     status: { type: Schema.Types.ObjectId, ref: 'StatusApplication' }
 }, {
     timestamps: {

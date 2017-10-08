@@ -10,7 +10,7 @@ let statusApplicationSchema = new Schema({
         updatedAt: 'update_at'
     }
 });
-let StatusApplicationApplication = mongoose.model('StatusApplication', statusApplicationSchema);
+let StatusApplication = mongoose.model('StatusApplication', statusApplicationSchema);
 module.exports = (registry) => {
     registry['StatusApplication'] = StatusApplication;
-}
+};
