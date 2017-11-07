@@ -20,8 +20,8 @@ var userSchema = new Schema({
         updatedAt: 'update_at'
     }
 });
-userSchema.methods.verifyPassword = async (password)=>{
-  return bcrypt.compareSync(password, this.password);
+userSchema.methods.verifyPassword = (password, user)=>{
+  return bcrypt.compareSync(password, user.password);
 };
 userSchema.methods.cryptPassword = async (user)=>{
   return await User.update({_id: user._id}, {$set: {password: bcrypt.hashSync(user.password, bcrypt.genSaltSync(10))}});

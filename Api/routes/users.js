@@ -44,5 +44,27 @@ module.exports = app=>{
     }
   });
   
+  router.post('/auth', async (req, res, next)=>{
+    let data = req.body;
+    let user = await db.User.findOne({username: data.username});
+    if(typeof data.username !== 'string' || typeof data.password !== 'string' || !user){
+      return res.json({
+        success: false,
+        message: 'Не правильно пароль или логин'
+      })
+    }
+    if(user.verifyPassword(data.password, user)){
+      return res.json({
+        success: true,
+        data: token.sign({user_id: user._id})
+      })
+    }else{
+      return res.json({
+        success: false,
+        message: 'Не правильно пароль или логин'
+      })
+    }
+  });
+  
   app.use('/users', router)
 }
