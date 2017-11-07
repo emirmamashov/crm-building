@@ -8,10 +8,16 @@
   "dependencies": {
     "body-parser": "~1.17.1",
     "cookie-parser": "~1.4.3",
+    "cors": "^2.8.4",
     "debug": "~2.6.3",
     "express": "~4.15.2",
+    "glob": "^7.1.2",
     "hbs": "~4.0.1",
+    "jsonwebtoken": "^8.0.1",
+    "lets-get-meta": "^2.1.1",
     "morgan": "~1.8.1",
-    "serve-favicon": "~2.4.2"
+    "request": "^2.83.0",
+    "serve-favicon": "~2.4.2",
+    "x-ray": "^2.3.2"
   }
 }

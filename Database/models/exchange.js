@@ -16,3 +16,4 @@ let Exchange = mongoose.model('Exchange', exchangeSchema);
 module.exports = (registry) => {
     registry['Exchange'] = Exchange;
 }
+

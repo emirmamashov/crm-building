@@ -25,4 +25,4 @@ let dealingSchema = new Schema({
 let Dealing = mongoose.model('Dealing', dealingSchema);
 module.exports = (registry) => {
     registry['Dealing'] = Dealing;
-}
+};
